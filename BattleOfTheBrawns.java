@@ -3,7 +3,9 @@ public class BattleOfTheBrawns {
     public static void main(String[] args) {
         // Initialize variables here
         Scanner input = new Scanner(System.in);
+        Exercise[] challenges = new Exercise[10];
 
+        // Get user input for name, duration, equipment, and focus
         System.out.println("Welcome to the Battle of the Brawns!");
         System.out.println("What is your name?");
         String name = input.nextLine();
@@ -15,7 +17,7 @@ public class BattleOfTheBrawns {
         char focus = input.next().charAt(0);
         System.out.println("Thank you for your input, " + name + "! Get ready to battle!");
         System.out.println("These are your available challenges:");
-        
+
         // Add code to display challenges based on user input
 
     }
