@@ -27,7 +27,7 @@ public class BattleOfTheBrawns {
         challengers[6] = new Challenger("Tom", "Arrogant", 2);
         challengers[7] = new Challenger("Rachel", "Sad", 3);
         challengers[8] = new Challenger("David", "Confident", 4);
-        challengers[9] = new Challenger("Jessica", "Kind", 5);
+        challengers[9] = new Challenger("Jessica the Muscle Gal", "Kind", 5);
         // Get user input for name, duration, equipment, and focus
         System.out.println("Welcome to the Battle of the Brawns!");
         System.out.println("What is your name?");
