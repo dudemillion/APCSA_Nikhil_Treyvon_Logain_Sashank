@@ -1,13 +1,11 @@
-
-
-public class Exercises
-{
+public class Exercise {
+    
     private double time ;
     private String type ;
     private int xpgain ;
     private String equipment;
     
-    public Exercises(String newType, double newTime, int newxpgain,String newEquipment){
+    public Exercise(String newType, double newTime, int newxpgain,String newEquipment){
         this.type = newType;
         this.time = newTime;
         this.xpgain = newxpgain;
