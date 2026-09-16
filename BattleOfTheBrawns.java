@@ -5,16 +5,16 @@ public class BattleOfTheBrawns {
         Scanner input = new Scanner(System.in);
         Exercise[] challenges = new Exercise[10];
         // Example challenges (use if you want)
-        challenges[0] = new Exercise("Push-ups", 10, true, "Strength");
-        challenges[1] = new Exercise("Jumping Jacks", 5, false, "Aerobics");
-        challenges[2] = new Exercise("Squats", 10, true, "Strength");
-        challenges[3] = new Exercise("Burpees", 5, false, "Aerobics");
-        challenges[4] = new Exercise("Lunges", 10, true, "Strength");
-        challenges[5] = new Exercise("Mountain Climbers", 5, false, "Aerobics");
-        challenges[6] = new Exercise("Plank", 5, false, "Aerobics");
-        challenges[7] = new Exercise("High Knees", 5, false, "Aerobics");
-        challenges[8] = new Exercise("Bicep Curls", 10, true, "Strength");
-        challenges[9] = new Exercise("Jump Rope", 5, false, "Aerobics");
+        challenges[0] = new Exercise("Push-ups", 10.0, 10, "Strength");
+        challenges[1] = new Exercise("Jumping Jacks", 5.0, 10, "Aerobics");
+        challenges[2] = new Exercise("Squats", 10.0, 10, "Strength");
+        challenges[3] = new Exercise("Burpees", 5.0, 10, "Aerobics");
+        challenges[4] = new Exercise("Lunges", 10.0, 10, "Strength");
+        challenges[5] = new Exercise("Mountain Climbers", 5.0, 10, "Aerobics");
+        challenges[6] = new Exercise("Plank", 5.0, 10, "Aerobics");
+        challenges[7] = new Exercise("High Knees", 5.0, 10, "Aerobics");
+        challenges[8] = new Exercise("Bicep Curls", 10.0, 10, "Strength");
+        challenges[9] = new Exercise("Jump Rope", 5.0, 10, "Aerobics");
 
         Challenger[] challengers = new Challenger[10];
         // Example challengers (use if you want)
