@@ -18,16 +18,16 @@ public class BattleOfTheBrawns {
 
         Challenger[] challengers = new Challenger[10];
         // Example challengers (use if you want)
-        challengers[0] = new Challenger("Jack", "Arrogant", 1);
+        challengers[0] = new Challenger("Jack", "Bored", 1);
         challengers[1] = new Challenger("Sarah", "Sad", 2);
         challengers[2] = new Challenger("Mike", "Arrogant", 3);
         challengers[3] = new Challenger("Emily", "Kind", 4);
-        challengers[4] = new Challenger("John the Muscle Bro", "Confident", 5);
-        challengers[5] = new Challenger("Lisa", "Kind", 1);
-        challengers[6] = new Challenger("Tom", "Arrogant", 2);
+        challengers[4] = new Challenger("John the Muscle Bro", "Competitive", 5);
+        challengers[5] = new Challenger("Lisa", "Mean", 1);
+        challengers[6] = new Challenger("Tom", "Competitive", 2);
         challengers[7] = new Challenger("Rachel", "Sad", 3);
         challengers[8] = new Challenger("David", "Confident", 4);
-        challengers[9] = new Challenger("Jessica the Muscle Gal", "Kind", 5);
+        challengers[9] = new Challenger("Jessica the Muscle Gal", "Arrogant", 5);
         // Get user input for name, duration, equipment, and focus
         System.out.println("Welcome to the Battle of the Brawns!");
         System.out.println("What is your name?");
