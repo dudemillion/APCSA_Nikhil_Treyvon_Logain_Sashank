@@ -3,7 +3,7 @@ public class BattleOfTheBrawns {
     public static void main(String[] args) {
         // Initialize variables here
         Scanner input = new Scanner(System.in);
-        Exercise[] challenges = new Exercise[10];
+        Exercise[] challenges = new Exercise[15];
         // Example challenges (use if you want)
         challenges[0] = new Exercise("Push-ups", "Strength", 10.0, 10, false);
         challenges[1] = new Exercise("Jumping Jacks", "Aerobics", 5.0, 10, false);
@@ -13,8 +13,13 @@ public class BattleOfTheBrawns {
         challenges[5] = new Exercise("Mountain Climbers", "Aerobics", 5.0, 10, false);
         challenges[6] = new Exercise("Plank", "Aerobics", 5.0, 10, false);
         challenges[7] = new Exercise("High Knees", "Aerobics", 5.0, 10, false);
-        challenges[8] = new Exercise("Bicep Curls", "Strength", 10.0, 10, false);
-        challenges[9] = new Exercise("Jump Rope", "Aerobics", 5.0, 10, false);
+        challenges[8] = new Exercise("Bicep Curls", "Strength", 10.0, 10, true);
+        challenges[9] = new Exercise("Jump Rope", "Aerobics", 5.0, 10, true);
+        challenges[10] = new Exercise("Bench Press", "Strength", 10.0, 10, true);
+        challenges[11] = new Exercise("Pull-ups", "Strength", 10.0, 10, true);
+        challenges[12] = new Exercise("Dumbbell Rows", "Strength", 10.0, 10, true);
+        challenges[13] = new Exercise("Kettlebell Swings", "Strength", 10.0, 10, true);
+        challenges[14] = new Exercise("Resistance Band Reps", "Strength", 10.0, 10, true);
 
         Challenger[] challengers = new Challenger[10];
         // Example challengers (use if you want)
