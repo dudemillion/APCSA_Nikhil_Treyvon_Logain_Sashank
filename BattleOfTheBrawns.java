@@ -47,6 +47,36 @@ public class BattleOfTheBrawns {
         System.out.println("These are your available challenges:");
 
         // Add code to display challenges based on user input
-
+        if (Character.toUpperCase(focus) == 'A') {
+            if (equipment == 'Y' || equipment == 'y') {
+                for (int i = 0; i < challenges.length; i++) {
+                    if (challenges[i].getType().equals("Aerobics") && challenges[i].getEquipment()) {
+                        System.out.println(challenges[i].getName() + " - Duration: " + challenges[i].getTime() + " minutes, XP Gain: " + challenges[i].getXpgain());
+                    }
+                }
+            } else {
+                for (int i = 0; i < challenges.length; i++) {
+                    if (challenges[i].getType().equals("Aerobics") && !challenges[i].getEquipment()) {
+                        System.out.println(challenges[i].getName() + " - Duration: " + challenges[i].getTime() + " minutes, XP Gain: " + challenges[i].getXpgain());
+                    }
+                }
+            }
+        } else if (Character.toUpperCase(focus) == 'S') {
+            if (equipment == 'Y' || equipment == 'y') {
+                for (int i = 0; i < challenges.length; i++) {
+                    if (challenges[i].getType().equals("Strength") && challenges[i].getEquipment()) {
+                        System.out.println(challenges[i].getName() + " - Duration: " + challenges[i].getTime() + " minutes, XP Gain: " + challenges[i].getXpgain());
+                    }
+                }
+            } else {
+                for (int i = 0; i < challenges.length; i++) {
+                    if (challenges[i].getType().equals("Strength") && !challenges[i].getEquipment()) {
+                        System.out.println(challenges[i].getName() + " - Duration: " + challenges[i].getTime() + " minutes, XP Gain: " + challenges[i].getXpgain());
+                    }
+                }
+            }
+        } else {
+            System.out.println("Invalid input. Please enter A for aerobics or S for strength training.");
+        }
     }
 }
