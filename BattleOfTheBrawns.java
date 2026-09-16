@@ -9,7 +9,6 @@ public class BattleOfTheBrawns {
         int maxXP = 50;
         int randomChallenger = 0;
         int reps = 0;
-        int length = 0;
         boolean inputGood = false;
         boolean playAgain = true;
         char continuePlaying = 'G';
@@ -58,9 +57,8 @@ public class BattleOfTheBrawns {
         System.out.println("What is your name?");
         String name = input.nextLine();
         while (playAgain) {
-        System.out.println("Hello, " + name + ". How long would you like to play? (in minutes (15, 30, 45, 60))");
-        int duration = input.nextInt();
-        System.out.println("Do you have proper equipment? For example, dumbbells, resistance bands, or a pull-up bar? (Y/N)");
+        long exerciseTime = System.nanoTime();
+        System.out.println("Hello, " + name + ". Do you have proper equipment? For example, dumbbells, resistance bands, or a pull-up bar? (Y/N)");
         char equipment = input.next().charAt(0);
         System.out.println("Would you like to focus on aerobics or strength training? (A/S)");
         char focus = input.next().charAt(0);
@@ -160,6 +158,7 @@ public class BattleOfTheBrawns {
                 playerXP = 0;
             }
             System.out.println("You gained 10 XP! Your total XP is now: " + playerXP);
+            System.out.println("You have been playing for: " + (System.nanoTime() - exerciseTime) / 1_000_000 / 1000 / 60 + "minutes.");
             System.out.println("Would you like to continue playing? (Y/N)");
             continuePlaying = input.next().charAt(0);
             do {
