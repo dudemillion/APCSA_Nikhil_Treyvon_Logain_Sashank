@@ -4,18 +4,18 @@ public class BattleOfTheBrawns {
         // Initialize variables here
         Scanner input = new Scanner(System.in);
         Exercise[] challenges = new Exercise[10];
-        // Example challenges
+        // Example challenges (use if you want)
         challenges[0] = new Exercise("Push-ups", 10, true, "Strength");
         challenges[1] = new Exercise("Jumping Jacks", 5, false, "Aerobics");
         challenges[2] = new Exercise("Squats", 10, true, "Strength");
         challenges[3] = new Exercise("Burpees", 5, false, "Aerobics");
         challenges[4] = new Exercise("Lunges", 10, true, "Strength");
         challenges[5] = new Exercise("Mountain Climbers", 5, false, "Aerobics");
-        challenges[6] = new Exercise("Plank", 5, false, "Strength");
+        challenges[6] = new Exercise("Plank", 5, false, "Aerobics");
         challenges[7] = new Exercise("High Knees", 5, false, "Aerobics");
         challenges[8] = new Exercise("Bicep Curls", 10, true, "Strength");
         challenges[9] = new Exercise("Jump Rope", 5, false, "Aerobics");
-        
+
         // Get user input for name, duration, equipment, and focus
         System.out.println("Welcome to the Battle of the Brawns!");
         System.out.println("What is your name?");
@@ -30,6 +30,5 @@ public class BattleOfTheBrawns {
         System.out.println("These are your available challenges:");
 
         // Add code to display challenges based on user input
-        for
     }
 }
