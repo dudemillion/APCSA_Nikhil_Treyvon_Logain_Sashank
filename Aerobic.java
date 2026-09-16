@@ -1,14 +1,14 @@
 public class Aerobic {
-    double Stamina;
-    double JumpPower;
-    public Aerobic(double Stamina, double JumpPower) {
+    int Stamina;
+    int JumpPower;
+    public Aerobic(int Stamina, int JumpPower) {
 		this.Stamina = Stamina;
 		this.JumpPower=JumpPower;
 	}
-	public double GetStamina() {
+	public int GetStamina() {
 	    return this.Stamina;
 	}
-	public double GetJump(){
+	public int GetJump(){
 	    return this.JumpPower;
 	}
 }
