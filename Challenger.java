@@ -1,9 +1,9 @@
 public class Challenger {
 	public int rank;
 	public String name;
-	public String personality;
+	public Personality personality;
 
-	public Challenger(String name, String personality, int rank) {
+	public Challenger(String name, Personality personality, int rank) {
 		this.name = name;
 		this.personality=personality;
 		this.rank=rank;
@@ -11,7 +11,7 @@ public class Challenger {
 	public String getName() {
 		return name;
 	}
-	public String getPersonality() {
+	public Personality getPersonality() {
         return personality;
 	}
 	public int getRank() {
