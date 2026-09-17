@@ -16,16 +16,16 @@ public void setPersonalityType(String personalityType){
 
 public String getPersonalityDialogue(String personalityType) {
     if (personalityType == "Arrogant") {
-        return "You will never beat my score";
+        return "You will never beat my score!";
     }
     else if (personalityType == "Kind") {
-        return "You can do it I believe in you";
+        return "You can beat me! I believe in you!";
     }
     else if (personalityType == "Mean"){
-        return "You are so bad at this";
+        return "You're so bad at this!";
     }
     else if (personalityType == "Sad"){
-        return "You are so much better than me";
+        return "You are so much better than me...";
     }
     else if (personalityType == "Competitive"){
         return "You think you can beat me? Be ready to lose!";

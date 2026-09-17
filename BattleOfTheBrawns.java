@@ -8,7 +8,9 @@ public class BattleOfTheBrawns {
         int playerXP = 0;
         int maxXP = 50;
         int randomChallenger = 0;
-        int reps = 0;
+        String reps = "";
+        int intreps = 0;
+        int botscore = 0;
         boolean inputGood = false;
         boolean playAgain = true;
         char continuePlaying = 'G';
@@ -56,10 +58,15 @@ public class BattleOfTheBrawns {
         System.out.println("Welcome to the Battle of the Brawns!");
         System.out.println("What is your name?");
         String name = input.nextLine();
-        while (playAgain) {
         long exerciseTime = System.nanoTime();
-        System.out.println("Hello, " + name + ". Do you have proper equipment? For example, dumbbells, resistance bands, or a pull-up bar? (Y/N)");
+        while (playAgain) {
+        System.out.println("Hello, " + name + ". Would you like to use equipment? For example, dumbbells, resistance bands, or a pull-up bar? (Y/N)");
         char equipment = input.next().charAt(0);
+        if (!(Character.toUpperCase(equipment) == 'Y' || Character.toUpperCase(equipment) == 'N')) {
+            
+            System.out.println("Invalid input.");
+            System.exit(0);
+        }
         System.out.println("Would you like to focus on aerobics or strength training? (A/S)");
         char focus = input.next().charAt(0);
         System.out.println("Thank you for your input, " + name + "! Get ready to battle!");
@@ -96,6 +103,7 @@ public class BattleOfTheBrawns {
             }
         } else {
             System.out.println("Invalid input. Please enter A for aerobics or S for strength training.");
+            System.exit(0);
         }
         System.out.println("Which challenge would you like to attempt? Please enter the name of the challenge exactly as it appears above.");
         input.nextLine();
@@ -112,7 +120,7 @@ public class BattleOfTheBrawns {
             System.exit(0);
         }
         System.out.println("You have selected: " + selectedChallenge);
-        randomChallenger = (int)(Math.random());
+        randomChallenger = (int)(Math.random() + 0.5);
         System.out.println("Now, let's see which challenger you will face! Your opponent is...");
         if (randomChallenger == 0 && playerRank == 1) {
             System.out.println(challengers[0].getName() + "!");
@@ -145,11 +153,20 @@ public class BattleOfTheBrawns {
             System.out.println(challengers[9].getName() + "!");
             challenger = challengers[9];
         }
+        botscore = (challenger.getRank() * 10) + ((int)(Math.random() * 5 ) + 1);
         System.out.println(challenger.getName() + ": " + challenger.getPersonality().getPersonalityDialogue(challenger.getPersonality().getPersonalityType()));
-        System.out.println(challenger.getName() + "'s score was: " + challenger.getRank() * 10 + " reps. Try to beat it! Come back here when you are done and enter the number of reps you completed.");
-        reps = input.nextInt();
-        if (reps > challenger.getRank() * 10) {
-            System.out.println("Congratulations! You beat " + challenger.getName() + "'s score of " + challenger.getRank() * 10 + " reps!");
+        System.out.println(challenger.getName() + "'s score was: " + botscore + " reps. Try to beat it! Come back here when you are done and enter the number of reps you completed.");
+        reps = input.next();
+        for (int i = 0; i < reps.length(); i++) {
+            if (!Character.isDigit(reps.charAt(i))) {
+                System.out.println("Error: Reps are not numeric.");
+                System.exit(0);
+            } else {
+                intreps = Integer.parseInt(reps);
+            }
+        }
+        if (intreps >= botscore) {
+            System.out.println("Congratulations! You beat " + challenger.getName() + "'s score of " + botscore + " reps!");
             playerXP += 10;
             if (playerXP > maxXP) {
                 playerXP = maxXP;
@@ -158,7 +175,7 @@ public class BattleOfTheBrawns {
                 playerXP = 0;
             }
             System.out.println("You gained 10 XP! Your total XP is now: " + playerXP);
-            System.out.println("You have been playing for: " + (System.nanoTime() - exerciseTime) / 1_000_000 / 1000 / 60 + "minutes.");
+            System.out.println("You have been playing for: " + String.format("%.2f", (System.nanoTime() - exerciseTime) / 1_000_000.0 / 1000.0 / 60.0) + " minutes.");
             System.out.println("Would you like to continue playing? (Y/N)");
             continuePlaying = input.next().charAt(0);
             do {
