@@ -109,7 +109,6 @@ public class BattleOfTheBrawns {
         input.nextLine();
         String selectedChallenge = input.nextLine();
         for (int i = 0; i < challenges.length; i++) {
-            System.out.println("Comparing: " + challenges[i].getName() + " and " + selectedChallenge);
             if (challenges[i].getName().equals(selectedChallenge)) {
                 inputGood = true;
                 break;
@@ -189,7 +188,7 @@ public class BattleOfTheBrawns {
                 }
             } while (Character.toUpperCase(continuePlaying) != 'Y' && Character.toUpperCase(continuePlaying) != 'N');
         } else {
-            System.out.println("Sorry, you did not beat " + challenger.getName() + "'s score of " + challenger.getRank() * 10 + " reps. Better luck next time!");
+            System.out.println("Sorry, you did not beat " + challenger.getName() + "'s score of " + botscore + " reps. Better luck next time!");
             System.out.println("Would you like to continue playing? (Y/N)");
             continuePlaying = input.next().charAt(0);
             do {
