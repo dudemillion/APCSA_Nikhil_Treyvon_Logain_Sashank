@@ -15,7 +15,8 @@ public class BattleOfTheBrawns {
         boolean playAgain = true;
         char continuePlaying = 'G';
         Challenger challenger = null;
-        // Challenges
+
+        // Challenge objects
         challenges[0] = new Exercise("Push-ups", "Strength", 10.0, 10, false);
         challenges[1] = new Exercise("Jumping Jacks", "Aerobics", 5.0, 10, false);
         challenges[2] = new Exercise("Squats", "Strength", 10.0, 10, false);
@@ -32,7 +33,7 @@ public class BattleOfTheBrawns {
         challenges[13] = new Exercise("Kettlebell Swings", "Strength", 10.0, 10, true);
         challenges[14] = new Exercise("Resistance Band Reps", "Strength", 10.0, 10, true);
 
-        // Personalities
+        // Personality objects
         Personality bored = new Personality("Bored");
         Personality mean = new Personality("Mean");
         Personality sad = new Personality("Sad");
@@ -41,7 +42,8 @@ public class BattleOfTheBrawns {
         Personality kind = new Personality("Kind");
 
         Challenger[] challengers = new Challenger[10];
-        // Challengers
+
+        // Challenger objects (uses personality objects as one of its parameters)
         challengers[0] = new Challenger("Jack", bored, 1);
         challengers[1] = new Challenger("Lisa", mean, 1);
         challengers[2] = new Challenger("Sarah", sad, 2);
@@ -105,6 +107,8 @@ public class BattleOfTheBrawns {
             System.out.println("Invalid input. Please enter A for aerobics or S for strength training.");
             System.exit(0);
         }
+
+        // Print all challenges that match criteria
         System.out.println("Which challenge would you like to attempt? Please enter the name of the challenge exactly as it appears above.");
         input.nextLine();
         String selectedChallenge = input.nextLine();
@@ -118,9 +122,13 @@ public class BattleOfTheBrawns {
             System.out.println("Invalid input. Please enter the exercise exactly as it appeared above.");
             System.exit(0);
         }
+        
+        // Print details and challenger based on exercise
         System.out.println("You have selected: " + selectedChallenge);
         randomChallenger = (int)(Math.random() + 0.5);
         System.out.println("Now, let's see which challenger you will face! Your opponent is...");
+
+        // Get random challenger in rank
         if (randomChallenger == 0 && playerRank == 1) {
             System.out.println(challengers[0].getName() + "!");
             challenger = challengers[0];
@@ -152,6 +160,8 @@ public class BattleOfTheBrawns {
             System.out.println(challengers[9].getName() + "!");
             challenger = challengers[9];
         }
+
+        // Get the challenger's score
         botscore = (challenger.getRank() * 10) + ((int)(Math.random() * 5 ) + 1);
         System.out.println(challenger.getName() + ": " + challenger.getPersonality().getPersonalityDialogue(challenger.getPersonality().getPersonalityType()));
         System.out.println(challenger.getName() + "'s score was: " + botscore + " reps. Try to beat it! Come back here when you are done and enter the number of reps you completed.");
@@ -164,9 +174,12 @@ public class BattleOfTheBrawns {
                 intreps = Integer.parseInt(reps);
             }
         }
+
+        // Check if player won
         if (intreps >= botscore) {
             System.out.println("Congratulations! You beat " + challenger.getName() + "'s score of " + botscore + " reps!");
             playerXP += 10;
+            // Check if rankup
             if (playerXP > maxXP) {
                 playerXP = maxXP;
                 System.out.println("You ranked up! Your rank is now: " + playerRank);
@@ -177,6 +190,8 @@ public class BattleOfTheBrawns {
             System.out.println("You have been playing for: " + String.format("%.2f", (System.nanoTime() - exerciseTime) / 1_000_000.0 / 1000.0 / 60.0) + " minutes.");
             System.out.println("Would you like to continue playing? (Y/N)");
             continuePlaying = input.next().charAt(0);
+
+            // Play again? loop
             do {
                 if (Character.toUpperCase(continuePlaying) == 'N') {
                     playAgain = false;
@@ -191,6 +206,7 @@ public class BattleOfTheBrawns {
             System.out.println("Sorry, you did not beat " + challenger.getName() + "'s score of " + botscore + " reps. Better luck next time!");
             System.out.println("Would you like to continue playing? (Y/N)");
             continuePlaying = input.next().charAt(0);
+            // Play again? loop
             do {
                 if (Character.toUpperCase(continuePlaying) == 'N') {
                     playAgain = false;
