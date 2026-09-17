@@ -1,3 +1,6 @@
+// UNUSED
+// Turns out we didn't need this.
+
 public class Aerobic {
     int Stamina;
     int JumpPower;
