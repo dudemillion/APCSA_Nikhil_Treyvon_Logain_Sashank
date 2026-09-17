@@ -158,7 +158,7 @@ public class BattleOfTheBrawns {
         reps = input.next();
         for (int i = 0; i < reps.length(); i++) {
             if (!Character.isDigit(reps.charAt(i))) {
-                System.out.println("Error: Reps are not numeric.");
+                System.out.println("Error: Reps are not numeric or negative.");
                 System.exit(0);
             } else {
                 intreps = Integer.parseInt(reps);
